@@ -7,7 +7,7 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 /* Cinematic, scroll-led opening */
-.cinematic-hero{height:100vh;min-height:690px;position:relative;background:#f4f6f1;border-bottom:1px solid var(--line)}
+.cinematic-hero{height:auto;min-height:100vh;position:relative;background:#f4f6f1;border-bottom:1px solid var(--line)}
 .cinematic-stage{height:100vh;min-height:690px;max-height:1000px;position:relative;overflow:hidden;display:flex;align-items:center;background:radial-gradient(ellipse at 76% 48%,#e3ebe1 0%,#f4f6f1 45%,#f8f9f6 78%)}
 .cinematic-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(25,40,30,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(25,40,30,.045) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(90deg,transparent 0%,black 38%,black 100%);pointer-events:none}
 .cinematic-layout{display:grid;grid-template-columns:.94fr 1.06fr;align-items:center;gap:25px;position:relative;z-index:1;padding-top:40px;padding-bottom:50px}
