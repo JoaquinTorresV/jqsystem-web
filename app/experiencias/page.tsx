@@ -1,0 +1,8 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
+import { experiences } from './data';
+export const metadata: Metadata = { title: 'Experiencias por industria | JQsystems', description: 'Explora cinco conceptos de experiencias web diseñadas para industrias y negocios especializados.' };
+export default function ExperiencesIndex() {
+  return <main className="experience-index"><header><Link className="index-logo" href="/"><b>JQ</b>systems<span>.</span></Link><Link href="/" className="index-back">Volver a JQsystems <ArrowUpRight size={15}/></Link></header><section className="index-hero"><span>JQSYSTEMS / INDUSTRY EXPERIENCES</span><h1>Cada industria<br/><em>merece su experiencia.</em></h1><p>Cinco conceptos de diseño web pensados para comunicar mejor, generar confianza y convertir visitas en oportunidades comerciales.</p></section><section className="index-grid">{Object.values(experiences).map((item) => <Link className={`index-card ${item.theme}`} href={`/experiencias/${item.slug}`} key={item.slug}><div className="index-card-image" style={{backgroundImage:`linear-gradient(0deg,rgba(0,0,0,.68),transparent 75%),url('${item.heroImage}')`}}/><div className="index-card-meta"><span>{item.number} / 05 · {item.sector}</span><ArrowUpRight size={18}/></div><h2>{item.title}<br/><em>{item.highlight}</em></h2><p>{item.description}</p><span className="index-card-link">Explorar experiencia <ArrowUpRight size={15}/></span></Link>)}</section><footer><span>© {new Date().getFullYear()} JQsystems</span><span>CONCEPTOS DEMOSTRATIVOS · NO SON WEBS DE CLIENTES</span><a href="mailto:contacto.jqsystem@gmail.com">Hablemos de tu proyecto <ArrowUpRight size={14}/></a></footer></main>;
+}

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './experiences.css';
+import './industry.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jqsystems.cl'),
