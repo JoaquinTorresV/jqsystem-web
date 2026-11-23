@@ -19,6 +19,15 @@ npm run build
 npm run start
 ```
 
+## Demo de chat con Anthropic
+La demo usa el modelo `claude-sonnet-5-5` desde una ruta del servidor. La clave nunca se expone al navegador.
+
+1. Copiar `.env.example` a `.env.local` y definir `ANTHROPIC_API_KEY` con una clave de Anthropic.
+2. Opcionalmente, cambiar `ANTHROPIC_MODEL` para usar otro modelo disponible.
+3. En Vercel, configurar las mismas variables en Project Settings → Environment Variables antes de desplegar.
+
+Los mensajes escritos en el chat se envían a Anthropic para generar respuestas. No se guardan en la aplicación, pero evita compartir información sensible. La ruta limita cada mensaje y aplica un límite temporal en memoria por IP; para producción pública, configura también límites persistentes en el hosting y alertas de gasto en Anthropic.
+
 ## Antes de publicar
 1. Reemplazar los conceptos del portafolio por proyectos reales autorizados y sus capturas.
 2. Confirmar el correo receptor del formulario. Actualmente utiliza FormSubmit y puede requerir una activación inicial desde el correo.
