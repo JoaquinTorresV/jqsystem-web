@@ -113,23 +113,23 @@ export default function ChatDemo() {
       <div className="container">
         <div className="chat-demo-heading">
           <div>
-            <p className="section-kicker">03 / PRUÉBALO EN TU NEGOCIO</p>
-            <h2>Una idea clara.<br /><span className="serif-accent">A tu medida.</span></h2>
+            <p className="section-kicker">03 / PRUEBA LA DEMO</p>
+            <h2>Cuéntale de tu negocio.<br /><span className="serif-accent">Descubre cómo ayudarte.</span></h2>
           </div>
-          <p className="heading-aside">Conversa con nuestra demo de IA, cuéntale qué tipo de negocio tienes y explora soluciones pensadas para ti.</p>
+          <p className="heading-aside">Escribe a qué se dedica tu negocio o elige un ejemplo. El asistente te dará ideas de cómo una web, un agente de IA y la automatización podrían ayudarte.</p>
         </div>
 
         <div className="chat-demo-layout">
           <div className="chat-demo-intro">
-            <span className="chat-demo-eyebrow"><Sparkles size={14} /> UNA DEMO INTERACTIVA</span>
-            <h3>Tu negocio es único.<br />Tu solución también.</h3>
-            <p>Explora algunas posibilidades para atraer clientes, responder consultas y mantener cada oportunidad en seguimiento.</p>
+            <span className="chat-demo-eyebrow"><Sparkles size={14} /> ASISTENTE INTERACTIVO</span>
+            <h3>Empieza contándole<br />qué negocio tienes.</h3>
+            <p>Recibirás ideas concretas para atraer clientes, responder consultas y organizar el seguimiento. Puedes escribir con tus propias palabras o probar los ejemplos del chat.</p>
             <div className="chat-demo-steps">
               <div><span>01</span><p><strong>Presencia digital</strong><br />Una web que explica y convierte.</p></div>
               <div><span>02</span><p><strong>Atención inteligente</strong><br />Un agente que responde y orienta.</p></div>
               <div><span>03</span><p><strong>Todo conectado</strong><br />Consultas y seguimiento centralizados.</p></div>
             </div>
-            <p className="chat-demo-disclaimer">Tus mensajes se envían a Anthropic para generar respuestas. No compartas información sensible; esta demo no realiza acciones ni guarda la conversación al recargar.</p>
+            <p className="chat-demo-disclaimer">Tus mensajes se procesan con un servicio de IA para generar respuestas. No compartas información sensible. El chat no guarda la conversación ni realiza acciones en tu nombre.</p>
           </div>
 
           <div className="chat-window">
@@ -148,6 +148,7 @@ export default function ChatDemo() {
               {isReplying && <div className="chat-message chat-message-assistant chat-typing" aria-label="El asistente está respondiendo"><span className="chat-message-avatar"><Bot size={14} /></span><p><i /><i /><i /></p></div>}
               <div ref={messagesEnd} />
             </div>
+            <p className="chat-quick-label">{hasBusiness ? 'También puedes preguntar:' : 'O prueba con uno de estos ejemplos:'}</p>
             <div className="chat-quick-replies">
               {(hasBusiness ? followUpReplies : quickReplies).map((reply) => (
                 <button key={reply} type="button" onClick={() => void sendMessage(reply)} disabled={isReplying}>{reply}</button>
@@ -155,11 +156,11 @@ export default function ChatDemo() {
             </div>
             <form className="chat-input-form" onSubmit={handleSubmit}>
               <label className="visually-hidden" htmlFor="chat-demo-input">Escribe tu mensaje</label>
-              <input id="chat-demo-input" value={input} onChange={(event) => setInput(event.target.value)} placeholder="Escribe sobre tu negocio..." maxLength={1000} disabled={isReplying} />
+              <input id="chat-demo-input" value={input} onChange={(event) => setInput(event.target.value)} placeholder="Ej.: tengo una clínica veterinaria" maxLength={1000} disabled={isReplying} />
               <button type="submit" aria-label="Enviar mensaje" disabled={!input.trim() || isReplying}><Send size={17} /></button>
             </form>
             <div className="chat-window-footer">
-              <span>IA DE ANTHROPIC · SE REINICIA AL RECARGAR</span>
+              <span>DEMO CON IA · SE REINICIA AL RECARGAR</span>
               <a className="chat-whatsapp-cta" href={wa} target="_blank" rel="noreferrer" aria-label="Continuar por WhatsApp al +56 9 3211 5412">
                 <MessageCircle size={15} />
                 <span><strong>Seguir por WhatsApp</strong><small>+56 9 3211 5412</small></span>

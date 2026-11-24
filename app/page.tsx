@@ -6,6 +6,7 @@ import Reveal from '@/components/Reveal';
 import CinematicHero from '@/components/CinematicHero';
 import ChatDemo from '@/components/ChatDemo';
 import ContactForm from '@/components/ContactForm';
+import ClientStrip from '@/components/ClientStrip';
 import { experiences } from '@/app/experiencias/data';
 
 const services = [
@@ -27,6 +28,8 @@ export default function Home() {
     <ChatDemo />
 
     <section className="work section-pad industry-showcase" id="proyectos"><div className="container"><Reveal><div className="section-heading"><div><p className="section-kicker">04 / TRABAJO SELECCIONADO</p><h2>Ideas que toman<br/><span className="serif-accent">forma digital.</span></h2></div><p className="heading-aside">Experiencias digitales adaptadas a industrias reales: cada concepto tiene su propia dirección visual y arquitectura comercial.</p></div></Reveal><div className="industry-showcase-grid">{Object.values(experiences).map((item,i)=><Reveal key={item.slug} delay={i*.06}><Link className="industry-showcase-card" href={`/experiencias/${item.slug}`} style={{backgroundImage:`linear-gradient(0deg,rgba(8,13,10,.92),rgba(8,13,10,.08) 78%),url('${item.heroImage}')`}}><span>{item.number} / 05 · {item.sector}</span><strong>{item.title}<br/><em>{item.highlight}</em></strong><i>Explorar experiencia <MoveUpRight size={14}/></i></Link></Reveal>)}</div><p className="industry-showcase-note"><Sparkles size={14}/> Cinco conceptos demostrativos, no proyectos de clientes. Cada pieza incluye una experiencia completa navegable.</p></div></section>
+
+    <ClientStrip />
 
     <section className="statement"><div className="container statement-inner"><Reveal><p className="section-kicker">NO MÁS DE LO MISMO</p><h2>Menos fricción.<br/><span className="serif-accent">Más posibilidades.</span></h2><p>Diseño que tiene intención. Tecnología que resuelve. Sistemas que te dejan avanzar.</p><a className="button button-light" href="#contacto">Conversemos <ArrowUpRight size={16}/></a></Reveal><div className="statement-symbol"><div className="symbol-core"/><div className="symbol-orbit orbit-a"/><div className="symbol-orbit orbit-b"/></div></div></section>
 
